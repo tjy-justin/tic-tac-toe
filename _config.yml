@@ -1,3 +1,5 @@
+# For GitHub Pages ONLY
+
 exclude:
   - Gemfile
   - Gemfile.lock
