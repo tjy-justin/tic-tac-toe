@@ -1,9 +1,0 @@
-# For GitHub Pages ONLY
-
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - vendor/
-
-include:
-  - node_modules/modern-normalize
