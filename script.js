@@ -11,7 +11,14 @@ const gameBoard = () => {
     board.push("");
   }
 
-  board.forEach(())
+  // display grid
+  board.forEach((item, index) => {
+    const square = document.createElement("div");
+    square.className = "square";
+    grid.appendChild(square);
+  });
+
+  // add squares
 };
 
 // Factories
