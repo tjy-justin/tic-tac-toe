@@ -4,9 +4,22 @@
   --shadow: 0 0px 10px 6px rgb(23 23 23 / 24%);
   --shadow-large: 0 0px 10px 15px rgb(23 23 23 / 24%);
 
+  --text-color: #fffffe;
   --border-color: #000;
-  --grid-bg-color: #fffffe;
-  --grid-bg-color-hover: #a7a9be;
+  --bg-color: #232946;
+  --grid-bg-color: #b8c1ec;
+  --grid-bg-color-hover: #b8c1ec;
+  --btn-color: #eebbc3;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.title,
+.msg,
+.footer {
+  color: var(--text-color);
 }
 
 .gameboard {
@@ -14,12 +27,15 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   border: 3px solid var(--border-color);
-  width: 500px;
-  height: 500px;
+  width: 35em;
+  height: 35em;
+  background-color: var(--grid-bg-color);
 }
 
 .grid {
-  border: 3px solid var(--border-color);
+  width: 150px;
+  height: 150px;
+  border: 1px solid var(--border-color);
   background-color: var(--grid-bg-color);
   font-size: 100px;
   text-align: center;
@@ -27,6 +43,6 @@
   user-select: none;
 }
 
-.field:hover {
+.grid:hover {
   background-color: var(--grid-bg-color-hover);
 }
