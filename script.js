@@ -13,6 +13,7 @@ const gameBoard = (() => {
 
   board.forEach((item, index) => {
     const square = document.createElement("div");
+    square.style.cursor = "pointer";
     square.className = "square";
     grid.appendChild(square);
   });
@@ -93,7 +94,6 @@ const flowCtrl = (() => {
     this.activePlayer === playerOne
       ? (this.activePlayer = playerTwo)
       : (this.activePlayer = playerOne);
-    console.log(`Active player: ${activePlayer.name}`);
   }
 
   function declareTie() {
