@@ -10,39 +10,68 @@
   --grid-bg-color: #b8c1ec;
   --grid-bg-color-hover: #b8c1ec;
   --btn-color: #eebbc3;
+  --accent: #121629;
 }
 
 body {
-  background-color: var(--bg-color);
+  /* background-color: var(--bg-color); */
 }
 
 .title,
 .msg,
 .footer {
-  color: var(--text-color);
+  /* color: var(--text-color); */
 }
 
 .gameboard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  border: 3px solid var(--border-color);
-  width: 35em;
-  height: 35em;
-  background-color: var(--grid-bg-color);
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border: 5px solid var(--border-color);
+  /* background-color: var(--grid-bg-color); */
 }
 
 .grid {
-  width: 150px;
-  height: 150px;
-  border: 1px solid var(--border-color);
-  background-color: var(--grid-bg-color);
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* background-color: var(--grid-bg-color); */
   font-size: 100px;
-  text-align: center;
-  cursor: pointer;
-  user-select: none;
 }
 
-.grid:hover {
+.square {
+  position: relative;
+  border: 5px solid var(--border-color);
+}
+
+.square:hover {
   background-color: var(--grid-bg-color-hover);
+}
+
+/* Icons */
+
+.xmark::after {
+  content: "\f00d";
+  font-weight: 600;
+}
+.circle::after {
+  content: "\f111";
+  font-weight: 300;
+}
+
+.xmark::after,
+.circle::after {
+  font-family: "Font Awesome 6 Free";
+  font-size: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
