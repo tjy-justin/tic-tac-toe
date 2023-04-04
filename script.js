@@ -101,12 +101,17 @@ const flowCtrl = (() => {
     console.log(`active player: ${activePlayer.name}`);
   }
 
+  function declareTie() {
+    msg.textContent = "It's a tie!";
+  }
+
   return {
     activePlayer,
     gridSlots,
     checkWinner,
     alertPlayer,
     nextPlayer,
+    declareTie,
     winner,
   };
 })();
