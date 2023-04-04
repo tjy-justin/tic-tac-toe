@@ -1,15 +1,5 @@
-// Selectors
-
-// Player
-
-// gameBoard
-
 // Modules needed: gameBoard, displayController, flowController
 // Factories needed: players
-
-// What does a displayCtrl actually do?
-// 1. reduce gridslots 2. msg changes 3. reset button
-// 4. declare winner msg 5. add gridslots
 
 const createPlayer = (name, sign) => ({ name, sign });
 
@@ -51,7 +41,7 @@ const gameBoard = (() => {
 })();
 
 const flowCtrl = (() => {
-  const playerOne = createPlayer("Player 1", "xmark");
+  const playerOne = createPlayer("Player 1", "x");
   const playerTwo = createPlayer("Player 2", "circle");
 
   // Game start
@@ -61,6 +51,12 @@ const flowCtrl = (() => {
 
   const msg = document.querySelector(".msg");
   const playerName = document.querySelector(".playerName");
+
+  // const restartBtn = document.querySelector(".restart");
+
+  // restartBtn.addEventListener("click", (e) => {
+  //   gameBoard.restart();
+  // });
 
   function checkWinner() {
     const winConditions = [
