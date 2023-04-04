@@ -77,7 +77,7 @@ const flowCtrl = (() => {
         gameBoard.board[item[1]] === this.activePlayer.sign &&
         gameBoard.board[item[2]] === this.activePlayer.sign
       ) {
-        console.log("We have a winner!");
+        console.log("We have a winner! 🎉");
         msg.textContent = `${this.activePlayer.name} wins!`;
         this.winner = true;
       }
@@ -97,7 +97,7 @@ const flowCtrl = (() => {
   }
 
   function declareTie() {
-    msg.textContent = "It's a tie!";
+    msg.textContent = "It's a tie! 🤝 That was well played.";
   }
 
   return {
