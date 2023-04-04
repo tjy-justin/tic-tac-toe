@@ -1,6 +1,5 @@
 // Selectors
 
-const grid = document.querySelector(".grid");
 // Player
 
 // gameBoard
@@ -20,18 +19,14 @@ const gameBoard = (() => {
     board.push("");
   }
 
+  const grid = document.querySelector(".grid");
+
   board.forEach((item, index) => {
     const square = document.createElement("div");
     square.className = "square";
     grid.appendChild(square);
   });
 
-  displayCtrl(board);
-
-  return { board };
-})();
-
-function displayCtrl(board) {
   Array.from(grid.children).forEach((square, index) => {
     square.addEventListener("click", () => {
       square.classList.add(flowCtrl.activePlayer.sign);
@@ -51,7 +46,9 @@ function displayCtrl(board) {
       }
     });
   });
-}
+
+  return { board };
+})();
 
 const flowCtrl = (() => {
   const playerOne = createPlayer("Player 1", "xmark");
@@ -65,18 +62,18 @@ const flowCtrl = (() => {
   const msg = document.querySelector(".msg");
   const playerName = document.querySelector(".playerName");
 
-  const winConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6],
-  ];
-
   function checkWinner() {
+    const winConditions = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
     winConditions.forEach((item, index) => {
       if (
         gameBoard.board[item[0]] === this.activePlayer.sign &&
@@ -100,8 +97,7 @@ const flowCtrl = (() => {
     this.activePlayer === playerOne
       ? (this.activePlayer = playerTwo)
       : (this.activePlayer = playerOne);
-    console.log("It's the next player's turn");
-    console.log(`active player: ${activePlayer.name}`);
+    console.log(`Active player: ${activePlayer.name}`);
   }
 
   function declareTie() {
