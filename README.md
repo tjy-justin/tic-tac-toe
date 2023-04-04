@@ -6,7 +6,7 @@ This is an evolving template repository for my TOP projects.
 
 ## Live Preview
 
-This project is hosted on **GitHub Pages**. Feel free to [:point_right: try it out]()!
+This project is hosted on **GitHub Pages**. Feel free to [:point_right: try it out](https://raineedust.github.io/tic-tac-toe/)!
 
 ## Motivation and Goals
 
