@@ -34,6 +34,16 @@ const gameBoard = (() => {
       board[index] = flowCtrl.activePlayer.sign;
       square.style.pointerEvents = "none";
       flowCtrl.gridSlots -= 1;
+
+      flowCtrl.checkWinner();
+      if (flowCtrl.winner === false) {
+        if (flowCtrl.gridSlots > 0) {
+          flowCtrl.alertPlayer();
+          flowCtrl.nextPlayer();
+        } else if (flowCtrl.gridSlots === 0) {
+          flowCtrl.declareTie();
+        }
+      }
     });
   });
 
@@ -77,10 +87,26 @@ const flowCtrl = (() => {
     });
   }
 
+  function alertPlayer() {
+    this.activePlayer === playerOne
+      ? (playerName.textContent = "Player 2")
+      : (playerName.textContent = "Player 1");
+  }
+
+  function nextPlayer() {
+    this.activePlayer === playerOne
+      ? (this.activePlayer = playerTwo)
+      : (this.activePlayer = playerOne);
+    console.log("It's the next player's turn");
+    console.log(`active player: ${activePlayer.name}`);
+  }
+
   return {
     activePlayer,
     gridSlots,
     checkWinner,
+    alertPlayer,
+    nextPlayer,
     winner,
   };
 })();
