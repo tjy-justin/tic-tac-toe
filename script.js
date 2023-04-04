@@ -1,5 +1,6 @@
 // Selectors
 
+const grid = document.querySelector(".grid");
 // Player
 
 // gameBoard
@@ -19,14 +20,18 @@ const gameBoard = (() => {
     board.push("");
   }
 
-  const grid = document.querySelector(".grid");
-
   board.forEach((item, index) => {
     const square = document.createElement("div");
     square.className = "square";
     grid.appendChild(square);
   });
 
+  displayCtrl(board);
+
+  return { board };
+})();
+
+function displayCtrl(board) {
   Array.from(grid.children).forEach((square, index) => {
     square.addEventListener("click", () => {
       square.classList.add(flowCtrl.activePlayer.sign);
@@ -46,9 +51,7 @@ const gameBoard = (() => {
       }
     });
   });
-
-  return { board };
-})();
+}
 
 const flowCtrl = (() => {
   const playerOne = createPlayer("Player 1", "xmark");
